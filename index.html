@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Wedding Invitation | Navin & Sreyroat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moul&family=Hanuman:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .pos-1 { top: 20%; left: 10%; }
+        .pos-2 { top: 40%; left: 85%; }
+        .pos-3 { top: 70%; left: 15%; }
+        .pos-4 { top: 85%; left: 70%; }
+        .pos-5 { top: 30%; left: 50%; }
+        
+        .firefly-1 { left: 15%; top: 30%; }
+        .firefly-2 { left: 75%; top: 40%; }
+        .firefly-3 { left: 50%; top: 80%; }
+        .firefly-4 { left: 25%; top: 65%; }
+
+        .spacer-20 { height: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="opening-screen">
+        <div class="gold-ornament top-left"></div>
+        <div class="gold-ornament top-right"></div>
+        <div class="gold-ornament bottom-left"></div>
+        <div class="gold-ornament bottom-right"></div>
+        
+        <div class="light-particle pos-1"></div>
+        <div class="light-particle pos-2"></div>
+        <div class="light-particle pos-3"></div>
+        <div class="light-particle pos-4"></div>
+        <div class="light-particle pos-5"></div>
+        
+        <div class="opening-container">
+            <div class="glass-card-opening">
+                <div class="khmer-border top-border"></div>
+                <div class="khmer-border right-border"></div>
+                <div class="khmer-border bottom-border"></div>
+                <div class="khmer-border left-border"></div>
+                
+                <div class="opening-content">
+                    <div class="couple-initials">
+                        <span class="initial">N</span>
+                        <span class="heart"><i class="fas fa-heart"></i></span>
+                        <span class="initial">S</span>
+                    </div>
+                    
+                    <h1 class="khmer-title">
+                        <span class="title-text">អាពាហ៍ពិពាហ៍</span>
+                        <span class="title-text gold-gradient">គូរភរិយាថ្មី</span>
+                    </h1>
+                    
+                    <p class="khmer-subtitle">
+                        សូមគោរពអញ្ជើញដ៏ឧត្តម<br>
+                        ចូលរួមពិធីមង្គលការរបស់យើងខ្ញុំ
+                    </p>
+                    
+                    <div class="decorative-divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-ornament">❦</div>
+                        <div class="divider-line"></div>
+                    </div>
+                    
+                    <div class="wedding-date">
+                        <div class="date-icon"><i class="far fa-calendar-alt"></i></div>
+                        <div class="date-text">
+                            <span class="day">ថ្ងៃអាទិត្យ</span>
+                            <span class="date">២២ កុម្ភៈ ២០២៦</span>
+                        </div>
+                    </div>
+                    
+                    <button id="begin-btn" class="gold-glow-btn pulse-animation">
+                        <span class="btn-text">សូមចុចដើម្បីចូលរួម</span>
+                        <span class="btn-icon"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ambient-firefly firefly-1"></div>
+        <div class="ambient-firefly firefly-2"></div>
+        <div class="ambient-firefly firefly-3"></div>
+        <div class="ambient-firefly firefly-4"></div>
+    </div>
+
+    <div id="main-content">
+        <div id="scroll-progress"></div>
+        <div id="firefly-container"></div>
+
+
+        <div class="floating-menu">
+            <button id="lang-btn" class="float-btn" title="Switch Language">🇰🇭</button>
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">×</span>
+            <img class="lightbox-content" id="lightbox-img" alt="Wedding Photo">
+        </div>
+
+        <div class="spacer-20"></div>
+
+        <div class="rsvp-badge animate-on-scroll">
+            <span data-en="RSVP by Feb 15, 2026" data-kh="សូមអញ្ជើញមុនថ្ងៃទី ២២ កុម្ភៈ ២០២៦">RSVP by Feb 15, 2026</span>
+        </div>
+
+        <div class="glass-card main-card animate-on-scroll tilt-effect">
+            <div class="ornament">❦</div>
+            <h1 class="title" data-en="Save The Date" data-kh="សូមគោរពអញ្ជើញ">សូមគោរពអញ្ជើញ</h1>
+            <p class="subtitle" data-en="Together with our families" data-kh="ព្រមទាំងក្រុមគ្រួសារនៃសងខាង">Together with our families</p>
+            
+            <div class="gold-divider"></div>
+
+            <div class="couple-section">
+                <div class="couple-name">
+                    <span id="typewriter-text"></span><span class="cursor">|</span>
+                </div>
+                <span class="english-name fade-in-delay">Navin & Sreyroat</span>
+            </div>
+
+            <div class="countdown-wrapper fade-in-delay">
+                <div class="time-unit"><span id="days">00</span><label>Days</label></div>
+                <div class="separator">:</div>
+                <div class="time-unit"><span id="hours">00</span><label>Hours</label></div>
+                <div class="separator">:</div>
+                <div class="time-unit"><span id="minutes">00</span><label>Mins</label></div>
+            </div>
+
+            <button id="calendar-btn" class="calendar-btn">📅 <span data-en="Add to Calendar" data-kh="ដាក់ក្នុងប្រតិទិន">Add to Calendar</span></button>
+
+            <div class="gold-divider"></div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="icon">📅</div>
+                    <h3 data-en="Sunday" data-kh="ថ្ងៃអាទិត្យ">Sunday</h3>
+                    <p>February 22, 2026</p>
+                    <p class="small-text">5:00 PM</p>
+                </div>
+                <div class="detail-item">
+                    <div class="icon">📍</div>
+                    <h3>City Hall</h3>
+                    <p>Battambang</p>
+                    <a href="https://maps.app.goo.gl/ua9XTU9mwuULsjds9?g_st=ipc" target="_blank" rel="noopener" class="text-link" data-en="View Map" data-kh="មើលផែនទី">View Map →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container animate-on-scroll" id="stats-section">
+            <div class="glass-card stats-card">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="2190">0</span>
+                    <span class="stat-label">Days Known</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">% Love</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" data-target="1">0</span>
+                    <span class="stat-label">Big Day</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="glass-card animate-on-scroll tilt-effect">
+            <h2 class="card-title" data-en="Our Story" data-kh="ដំណើររឿង">Our Story</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2013</div>
+                    <div class="desc" data-en="First Met" data-kh="ជួបគ្នាលើកដំបូង">First Met</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2025</div>
+                    <div class="desc" data-en="Engaged" data-kh="ភ្ជាប់ពាក្យ">Engaged</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="date">2026</div>
+                    <div class="desc" data-en="Wedding Day" data-kh="ថ្ងៃមង្គលការ">Wedding Day</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="glass-card animate-on-scroll tilt-effect">
+                <h2 class="card-title" data-en="Wedding Gift" data-kh="ចំណងដៃ">Wedding Gift</h2>
+                <div class="qr-wrapper">
+                    <img src="image/3d4690a7-a225-463a-9ee1-f2ec1cc029f6.jpg" alt="ABA QR" class="qr-img gallery-img">
+                </div>
+                <div class="account-row">
+                    <div class="bank-info">
+                        <span class="bank-name">ABA</span>
+                        <span class="acc-num" id="aba-number">12345678</span>
+                    </div>
+                    <button id="copy-btn" class="icon-btn">📋</button>
+                </div>
+            </div>
+
+            <div class="glass-card animate-on-scroll tilt-effect">
+                <h2 class="card-title" data-en="Gallery" data-kh="រូបថត">Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="image/pic1.jpg" class="gallery-img" alt="Wedding gallery photo 1"></div>
+                    <div class="gallery-item"><img src="image/pic2.jpg" class="gallery-img" alt="Wedding gallery photo 2"></div>
+                    <div class="gallery-item"><img src="image/pic3.jpg" class="gallery-img" alt="Wedding gallery photo 3"></div>
+                    <div class="gallery-item"><img src="image/pic4.jpg" class="gallery-img" alt="Wedding gallery photo 4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card animate-on-scroll full-width tilt-effect">
+            <h2 class="card-title" data-en="Guestbook" data-kh="សៀវភៅជូនពរ">Guestbook</h2>
+            <form id="guestbook-form">
+                <div class="input-group">
+                    <input type="text" id="guest-name" placeholder="Name / ឈ្មោះ" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="guest-message" placeholder="Wishes / ពាក្យជូនពរ..." required></textarea>
+                </div>
+                <button type="submit" class="gold-btn" data-en="Send Wishes ✨" data-kh="ផ្ញើពាក្យជូនពរ ✨">Send Wishes ✨</button>
+            </form>
+            <div id="messages-display"></div>
+        </div>
+
+        <footer class="site-footer">
+            <p class="credits">Created by Mot Reaksmey</p>
+        </footer>
+    </div>
+
+    <div class="cursor-trail"></div>
+
+    <script src="card.js"></script>
+</body>
+</html>
