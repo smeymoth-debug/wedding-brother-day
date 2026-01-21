@@ -454,18 +454,22 @@ body::before {
     margin: 25px 0;
 }
 
+/* HIDDEN KHMER NAMES */
 .couple-name {
     font-family: 'Moul', serif;
     font-size: 1.6rem;
     color: #fff;
     margin-bottom: 8px;
     min-height: 40px;
+    display: none; /* ADDED THIS */
 }
 
+/* HIDDEN ENGLISH NAMES */
 .english-name {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     color: #fcf6ba;
+    display: none; /* ADDED THIS */
 }
 
 .cursor {
