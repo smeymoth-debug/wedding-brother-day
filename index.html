@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Wedding Invitation | Navin & Sereyroath</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Moul&family=Hanuman:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -26,6 +29,10 @@
     </style>
 </head>
 <body>
+
+    <audio id="bg-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+    </audio>
 
     <div id="opening-screen">
         <div class="gold-ornament top-left"></div>
@@ -48,9 +55,9 @@
                 
                 <div class="opening-content">
                     <div class="couple-initials">
-                        <span class="initial">Navin mot</span>
+                        <span class="initial">N</span>
                         <span class="heart"><i class="fas fa-heart"></i></span>
-                        <span class="initial">Sereyroath chum</span>
+                        <span class="initial">S</span>
                     </div>
                     
                     <h1 class="khmer-title">
@@ -95,9 +102,11 @@
         <div id="scroll-progress"></div>
         <div id="firefly-container"></div>
 
-
         <div class="floating-menu">
             <button id="lang-btn" class="float-btn" title="Switch Language">🇰🇭</button>
+            <button id="music-btn" class="float-btn music-btn playing" title="Toggle Music">
+                <i class="fas fa-music"></i>
+            </button>
         </div>
 
         <div id="lightbox" class="lightbox">
@@ -146,9 +155,51 @@
                 </div>
                 <div class="detail-item">
                     <div class="icon">📍</div>
-                    <h3>City Hall B(បាត់ដំបង​ សុីធីហល​ អគារប៊ី) </h3>
-                    <p>Battambang</p>
-                    <a href="https://maps.app.goo.gl/ua9XTU9mwuULsjds9?g_st=ipc" target="_blank" rel="noopener" class="text-link" data-en="View Map" data-kh="មើលផែនទី">View Map →</a>
+                    <h3>City Hall B</h3>
+                    <p>(បាត់ដំបង សុីធីហល អគារប៊ី)</p>
+                </div>
+            </div>
+
+            <div class="map-wrapper fade-in-delay">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.97230230537!2d103.18974551351112!3d13.06787355152341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3105490013f96615%3A0x6b4fb6c1f1f919f6!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="https://maps.google.com/?q=Battambang+City+Hall" target="_blank" rel="noopener" class="text-link" data-en="Open in Google Maps" data-kh="បើកក្នុងកម្មវិធីផែនទី">Open in Google Maps →</a>
+        </div>
+
+        <div class="glass-card animate-on-scroll tilt-effect">
+            <h2 class="card-title" data-en="Wedding Program" data-kh="កម្មវិធីអាពាហ៍ពិពាហ៍">កម្មវិធីអាពាហ៍ពិពាហ៍</h2>
+
+            <div class="program-day">
+                <h3 class="day-title" data-en="Saturday, Feb 21, 2026" data-kh="ថ្ងៃសៅរ៍ ទី២១ កុម្ភៈ ២០២៦">ថ្ងៃសៅរ៍ ទី២១ កុម្ភៈ ២០២៦</h3>
+                <div class="program-section">
+                    <h4 class="time-of-day" data-en="Afternoon / Evening Program" data-kh="កម្មវិធីពេលល្ងាច">កម្មវិធីពេលល្ងាច</h4>
+                    <ul class="program-list">
+                        <li><span class="time">2:30 PM</span> <span class="event" data-en="Monk Blessing Ceremony" data-kh="ពិធីសូត្រមន្ត">ពិធីសូត្រមន្ត</span></li>
+                        <li><span class="time">5:30 PM</span> <span class="event" data-en="Areca Flower Ceremony" data-kh="ពិធីកាត់ខាន់ស្លា">ពិធីកាត់ខាន់ស្លា</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="gold-divider"></div>
+
+            <div class="program-day">
+                <h3 class="day-title" data-en="Sunday, Feb 22, 2026" data-kh="ថ្ងៃអាទិត្យ ទី២២ កុម្ភៈ ២០២៦">ថ្ងៃអាទិត្យ ទី២២ កុម្ភៈ ២០២៦</h3>
+                <div class="program-section">
+                    <h4 class="time-of-day" data-en="Morning Program" data-kh="កម្មវិធីពេលព្រឹក">កម្មវិធីពេលព្រឹក</h4>
+                    <ul class="program-list">
+                        <li><span class="time">7:30 AM</span> <span class="event" data-en="Dowry Procession" data-kh="ពិធីហែរជំនូន">ពិធីហែរជំនូន</span></li>
+                        <li><span class="time">8:15 AM</span> <span class="event" data-en="Ring Exchange" data-kh="ពិធីបំពាក់ចិញ្ចៀន">ពិធីបំពាក់ចិញ្ចៀន</span></li>
+                        <li><span class="time">9:00 AM</span> <span class="event" data-en="Hair Cutting Ceremony" data-kh="ពិធីកាត់សក់បង្កកសេរី">ពិធីកាត់សក់បង្កកសេរី</span></li>
+                        <li><span class="time">10:30 AM</span> <span class="event" data-en="Pairing Ceremony" data-kh="ពិធីសំពាះផ្ទឹម">ពិធីសំពាះផ្ទឹម</span></li>
+                        <li><span class="time">11:00 AM</span> <span class="event" data-en="Lunch Reception" data-kh="អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់">អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់</span></li>
+                    </ul>
+                </div>
+                <div class="program-section">
+                    <h4 class="time-of-day" data-en="Evening Program" data-kh="កម្មវិធីពេលល្ងាច">កម្មវិធីពេលល្ងាច</h4>
+                    <ul class="program-list">
+                        <li><span class="time">5:00 PM</span> <span class="event" data-en="Dinner Reception" data-kh="ទទួលបដិសណ្ធារកិច្ចភ្ញៀវកិត្តិយសពិសារអាហារពេលល្ងាច">ទទួលបដិសណ្ធារកិច្ចភ្ញៀវកិត្តិយសពិសារអាហារពេលល្ងាច</span></li>
+                    </ul>
+                    <p class="program-location">📍 City Hall អគារB</p>
                 </div>
             </div>
         </div>
@@ -191,20 +242,6 @@
 
         <div class="container">
             <div class="glass-card animate-on-scroll tilt-effect">
-                <h2 class="card-title" data-en="Wedding Gift" data-kh="ចំណងដៃ">Wedding Gift</h2>
-                <div class="qr-wrapper">
-                    <img src="image/3d4690a7-a225-463a-9ee1-f2ec1cc029f6.jpg" alt="ABA QR" class="qr-img gallery-img">
-                </div>
-                <div class="account-row">
-                    <div class="bank-info">
-                        <span class="bank-name">ABA Bank(Chum sereyrath Mot navin)</span>
-                        <span class="acc-num" id="aba-number">015539438</span>
-                    </div>
-                    <button id="copy-btn" class="icon-btn">📋</button>
-                </div>
-            </div>
-
-            <div class="glass-card animate-on-scroll tilt-effect">
                 <h2 class="card-title" data-en="Gallery" data-kh="រូបថត">Gallery</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item"><img src="image/pic1.jpg" class="gallery-img" alt="Wedding gallery photo 1"></div>
@@ -217,20 +254,59 @@
                     <div class="gallery-item"><img src="image/pic8.jpg" class="gallery-img" alt="Wedding gallery photo 8"></div>
                 </div>
             </div>
+
+            <div class="glass-card animate-on-scroll tilt-effect">
+                <h2 class="card-title" data-en="Wedding Gift" data-kh="ចំណងដៃ">Wedding Gift</h2>
+                <div class="qr-wrapper">
+                    <img src="image/3d4690a7-a225-463a-9ee1-f2ec1cc029f6.jpg" alt="ABA QR" class="qr-img gallery-img">
+                </div>
+                <div class="account-row">
+                    <div class="bank-info">
+                        <span class="bank-name">ABA Bank(Chum sereyrath Mot navin)</span>
+                        <span class="acc-num" id="aba-number">015539438</span>
+                    </div>
+                    <button id="copy-btn" class="icon-btn">📋</button>
+                </div>
+            </div>
         </div>
 
         <div class="glass-card animate-on-scroll full-width tilt-effect">
-            <h2 class="card-title" data-en="Guestbook" data-kh="សៀវភៅជូនពរ">Guestbook</h2>
-            <form id="guestbook-form">
+            <h2 class="card-title" data-en="RSVP" data-kh="បញ្ជាក់ការចូលរួម">RSVP</h2>
+            <p class="subtitle" data-en="Please respond by Feb 15, 2026" data-kh="សូមបញ្ជាក់មុនថ្ងៃទី ១៥ កុម្ភៈ ២០២៦">Please respond by Feb 15, 2026</p>
+            
+            <form id="rsvp-form">
                 <div class="input-group">
-                    <input type="text" id="guest-name" placeholder="Name / ឈ្មោះ" required>
+                    <input type="text" id="rsvp-name" placeholder="Name / ឈ្មោះ" required>
                 </div>
+
                 <div class="input-group">
-                    <textarea id="guest-message" placeholder="Wishes / ពាក្យជូនពរ..." required></textarea>
+                    <select id="rsvp-attendance" required>
+                        <option value="" disabled selected data-en="Will you attend?" data-kh="តើលោកអ្នកនឹងអញ្ជើញចូលរួមដែរឬទេ?">Will you attend? / តើអ្នកនឹងចូលរួមទេ?</option>
+                        <option value="Both">Yes, Morning & Evening / បាទ/ចាស ទាំងព្រឹកនិងល្ងាច</option>
+                        <option value="Morning">Morning Only / ពេលព្រឹកប៉ុណ្ណោះ</option>
+                        <option value="Evening">Evening Only / ពេលល្ងាចប៉ុណ្ណោះ</option>
+                        <option value="No">Regretfully Cannot Attend / មិនអាចចូលរួមបានទេ</option>
+                    </select>
                 </div>
-                <button type="submit" class="gold-btn" data-en="Send Wishes ✨" data-kh="ផ្ញើពាក្យជូនពរ ✨">Send Wishes ✨</button>
+
+                <div class="input-group">
+                    <select id="rsvp-guests" required>
+                        <option value="" disabled selected data-en="Number of Guests" data-kh="ចំនួនភ្ញៀវសរុប">Number of Guests / ចំនួនភ្ញៀវ</option>
+                        <option value="1">1 Person / ១ នាក់</option>
+                        <option value="2">2 People / ២ នាក់</option>
+                        <option value="3">3 People / ៣ នាក់</option>
+                        <option value="4+">4+ People / ៤ នាក់ឡើង</option>
+                        <option value="0">0 (Not attending)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="rsvp-message" placeholder="Wishes for the couple / ពាក្យជូនពរ..." required></textarea>
+                </div>
+
+                <button type="submit" class="gold-btn" data-en="Send RSVP ✨" data-kh="បញ្ជាក់ការចូលរួម ✨">Send RSVP ✨</button>
             </form>
-            <div id="messages-display"></div>
+            <div id="messages-display" style="margin-top: 20px;"></div>
         </div>
 
         <footer class="site-footer">

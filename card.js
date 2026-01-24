@@ -25,6 +25,7 @@ function openInvitation() {
     const openingScreen = document.getElementById('opening-screen');
     const mainContent = document.getElementById('main-content');
     const beginBtn = document.getElementById('begin-btn');
+    const bgMusic = document.getElementById('bg-music');
     
     // Disable button during transition
     if (beginBtn) {
@@ -33,10 +34,10 @@ function openInvitation() {
         beginBtn.style.opacity = '0.7';
     }
     
-    // Add click sound
-    const clickSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3');
-    clickSound.volume = 0.3;
-    clickSound.play().catch(console.log);
+    // Play Background Music
+    if (bgMusic) {
+        bgMusic.play().catch(console.log);
+    }
     
     // Create particle effect
     createGoldParticles(beginBtn);
@@ -67,44 +68,62 @@ function openInvitation() {
 function initMainContent() {
     console.log('Initializing main content...');
     
-    // 1. Scroll Progress
     window.addEventListener('scroll', updateScrollProgress);
-    
-    // 2. Fireflies
     initFireflies();
-    
-    // 3. Countdown
+    initConfetti(); 
     initCountdown();
-    
-    // 4. Typewriter
     initTypewriter();
-    
-    // 5. Stats Counter
     initStatsCounter();
-    
-    // 6. Cursor Trail
     initCursorTrail();
-    
-    // 7. Language Switcher
     initLanguageSwitcher();
-    
-    // 8. 3D Tilt Effect
+    initMusicPlayer(); // NEW: Music Toggle
     initTiltEffect();
-    
-    // 9. Calendar Button
     initCalendarButton();
-    
-    // 10. Copy Button
     initCopyButton();
-    
-    // 11. Scroll Animations
     initScrollAnimations();
-    
-    // 12. Lightbox
     initLightbox();
-    
-    // 13. Guestbook
     initGuestbook();
+}
+
+// NEW: Music Player Controller
+function initMusicPlayer() {
+    const musicBtn = document.getElementById('music-btn');
+    const bgMusic = document.getElementById('bg-music');
+    
+    if (!musicBtn || !bgMusic) return;
+
+    musicBtn.addEventListener('click', () => {
+        if (bgMusic.paused) {
+            bgMusic.play();
+            musicBtn.classList.add('playing');
+        } else {
+            bgMusic.pause();
+            musicBtn.classList.remove('playing');
+        }
+    });
+}
+
+// NEW: Falling Gold Petals/Confetti Effect
+function initConfetti() {
+    const container = document.body;
+    // We will use glitter, stars, and petals
+    const shapes = ['✨', '✦', '✧', '🌸']; 
+    
+    for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+        
+        // Random positioning and sizes
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.fontSize = (Math.random() * 15 + 10) + 'px';
+        
+        // Random fall speed and delay
+        confetti.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        confetti.style.animationDelay = (Math.random() * 10) + 's';
+        
+        container.appendChild(confetti);
+    }
 }
 
 // Scroll Progress
@@ -378,27 +397,82 @@ function initLightbox() {
 }
 
 
-// Guestbook
+// RSVP & Guestbook Handler
 function initGuestbook() {
-    const form = document.getElementById('guestbook-form');
-    if (!form) return;
+    const form = document.getElementById('rsvp-form');
+    const display = document.getElementById('messages-display');
     
+    if (!form) return;
+
+    // Load saved messages from Local Storage
+    const savedMessages = JSON.parse(localStorage.getItem("weddingRSVP")) || [];
+    savedMessages.forEach(msg => addMessageToDOM(msg, display));
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        const name = document.getElementById('guest-name').value.trim();
-        const message = document.getElementById('guest-message').value.trim();
-        const display = document.getElementById('messages-display');
+        // Get values
+        const name = document.getElementById('rsvp-name').value.trim();
+        const attendance = document.getElementById('rsvp-attendance').value;
+        const guests = document.getElementById('rsvp-guests').value;
+        const message = document.getElementById('rsvp-message').value.trim();
         
-        if (name && message && display) {
-            const item = document.createElement('div');
-            item.className = 'message-item';
-            item.innerHTML = `<strong>${name}</strong><br>${message}`;
-            display.prepend(item);
-        }
+        // Create RSVP object
+        const rsvpData = { 
+            name, 
+            attendance, 
+            guests, 
+            message,
+            date: new Date().toLocaleDateString()
+        };
+
+        // Save to local storage
+        savedMessages.unshift(rsvpData);
+        localStorage.setItem("weddingRSVP", JSON.stringify(savedMessages));
+
+        // Display the new message
+        addMessageToDOM(rsvpData, display, true);
         
+        // Reset form & thank the user
         form.reset();
+        const submitBtn = form.querySelector('button');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = "✅ Received! / ទទួលបានហើយ!";
+        setTimeout(() => submitBtn.innerHTML = originalText, 3000);
     });
+}
+
+// Helper function to display messages
+function addMessageToDOM(data, container, animate = false) {
+    if (!container) return;
+
+    const item = document.createElement('div');
+    item.className = 'message-item';
+    
+    // Determine the color of the RSVP badge based on attendance
+    let badgeColor = data.attendance === 'No' ? '#ff6b6b' : '#bf953f';
+    let statusText = data.attendance === 'No' ? 'Not Attending' : `${data.guests} Guest(s) - ${data.attendance}`;
+
+    item.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+            <strong style="color: #bf953f; font-size: 1.1rem;">${data.name}</strong>
+            <span style="font-size: 0.8rem; background: ${badgeColor}20; color: ${badgeColor}; padding: 2px 8px; border-radius: 12px; border: 1px solid ${badgeColor};">${statusText}</span>
+        </div>
+        <p style="color: #ccc; line-height: 1.5;">"${data.message}"</p>
+    `;
+
+    if (animate) {
+        item.style.opacity = 0;
+        item.style.transform = "translateY(-10px)";
+        container.prepend(item);
+        setTimeout(() => {
+            item.style.transition = "all 0.5s ease";
+            item.style.opacity = 1;
+            item.style.transform = "translateY(0)";
+        }, 10);
+    } else {
+        container.appendChild(item);
+    }
 }
 
 // Gold Particles
