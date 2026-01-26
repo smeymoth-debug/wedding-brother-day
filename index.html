@@ -26,12 +26,18 @@
         .firefly-4 { left: 25%; top: 65%; }
 
         .spacer-20 { height: 20px; }
+        
+        /* New helper styles for requested image layout */
+        .story-layout { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .story-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid #bf953f; flex-shrink: 0; }
+        .gift-pics-container { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
+        .gift-sub-img { width: 45%; border-radius: 8px; aspect-ratio: 1/1; object-fit: cover; border: 1px solid rgba(191, 149, 63, 0.3); }
     </style>
 </head>
 <body>
 
     <audio id="bg-music" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+        <source src="song/young-and-beautiful.mp3.mp3" type="audio/mpeg">
     </audio>
 
     <div id="opening-screen">
@@ -117,14 +123,20 @@
         <div class="spacer-20"></div>
 
         <div class="rsvp-badge animate-on-scroll">
-            <span data-en="RSVP by Feb 15, 2026" data-kh="ថ្ងៃទី ២២ កុម្ភៈ ២០២៦">RSVP by Feb 22, 2026</span>
+            <span data-en="RSVP by Feb 22, 2026" data-kh="ថ្ងៃទី ២២ កុម្ភៈ ២០២៦">RSVP by Feb 22, 2026</span>
         </div>
 
         <div class="glass-card main-card animate-on-scroll tilt-effect">
             <div class="ornament">❦</div>
-            <h1 class="title" data-en="We cordially invite our distinguished guests" data-kh="យើងខ្ញុំសូមគោរពអញ្ជើញភ្ញៀវកិត្តិយស">យើងខ្ញុំសូមគោរពអញ្ជើញភ្ញៀវកិត្តិយស</h1>
-            <p class="subtitle" data-en="Together with our families" data-kh="ព្រមទាំងក្រុមគ្រួសារនៃសងខាង">Together with our families</p>
             
+            <h1 class="title" data-en="We cordially invite" data-kh="មានកិត្តិយសសូមគោរពអញ្ជើញ">មានកិត្តិយសសូមគោរពអញ្ជើញ</h1>
+            <p class="subtitle" style="line-height: 1.8;" data-en="Excellencies, Ladies, Gentlemen and Friends, to join and bless the wedding of our children" data-kh="ឯកឧត្តម លោកឧកញ្ញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា នឹង ប្រិយមិត្តអញ្ញើញ ចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពេជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ">
+                ឯកឧត្តម លោកឧកញ្ញ៉ា<br>
+                លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា នឹង ប្រិយមិត្ត<br>
+                អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស<br>
+                ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តី ជ័យមង្គល<br>
+                ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ
+            </p>
             <div class="gold-divider"></div>
 
             <div class="couple-section">
@@ -142,7 +154,7 @@
                 <div class="time-unit"><span id="minutes">00</span><label>Mins</label></div>
             </div>
 
-            <span data-en="countdown event" data-kh="ប្រតិទិន">
+            <span data-en="countdown event" data-kh="ប្រតិទិន"></span>
 
             <div class="gold-divider"></div>
 
@@ -161,47 +173,9 @@
             </div>
 
             <div class="map-wrapper fade-in-delay">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.97230230537!2d103.18974551351112!3d13.06787355152341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3105490013f96615%3A0x6b4fb6c1f1f919f6!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.97230230537!2d103.18974551351112!3d13.06787355152341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3105490013f96615%3A0x6b4fb6c1f1f919f6!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <a href="https://maps.app.goo.gl/wXZAZfgZKZ9mdEAC8" target="_blank" rel="noopener" class="text-link" data-en="Open in Google Maps" data-kh="បើកក្នុងកម្មវិធីផែនទី">Open in Google Maps →</a>
-        </div>
-
-        <div class="glass-card animate-on-scroll tilt-effect">
-            <h2 class="card-title" data-en="Wedding Program" data-kh="កម្មវិធីអាពាហ៍ពិពាហ៍">កម្មវិធីអាពាហ៍ពិពាហ៍</h2>
-
-            <div class="program-day">
-                <h3 class="day-title" data-en="Saturday, Feb 21, 2026" data-kh="ថ្ងៃសៅរ៍ ទី២១ កុម្ភៈ ២០២៦">ថ្ងៃសៅរ៍ ទី២១ កុម្ភៈ ២០២៦</h3>
-                <div class="program-section">
-                    <h4 class="time-of-day" data-en="Afternoon / Evening Program" data-kh="កម្មវិធីពេលល្ងាច">កម្មវិធីពេលល្ងាច</h4>
-                    <ul class="program-list">
-                        <li><span class="time">2:30 PM</span> <span class="event" data-en="Monk Blessing Ceremony" data-kh="ពិធីសូត្រមន្ត">ពិធីសូត្រមន្ត</span></li>
-                        <li><span class="time">5:30 PM</span> <span class="event" data-en="Areca Flower Ceremony" data-kh="ពិធីកាត់ខាន់ស្លា">ពិធីកាត់ខាន់ស្លា</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="gold-divider"></div>
-
-            <div class="program-day">
-                <h3 class="day-title" data-en="Sunday, Feb 22, 2026" data-kh="ថ្ងៃអាទិត្យ ទី២២ កុម្ភៈ ២០២៦">ថ្ងៃអាទិត្យ ទី២២ កុម្ភៈ ២០២៦</h3>
-                <div class="program-section">
-                    <h4 class="time-of-day" data-en="Morning Program" data-kh="កម្មវិធីពេលព្រឹក">កម្មវិធីពេលព្រឹក</h4>
-                    <ul class="program-list">
-                        <li><span class="time">7:30 AM</span> <span class="event" data-en="Dowry Procession" data-kh="ពិធីហែរជំនូន">ពិធីហែរជំនូន</span></li>
-                        <li><span class="time">8:15 AM</span> <span class="event" data-en="Ring Exchange" data-kh="ពិធីបំពាក់ចិញ្ចៀន">ពិធីបំពាក់ចិញ្ចៀន</span></li>
-                        <li><span class="time">9:00 AM</span> <span class="event" data-en="Hair Cutting Ceremony" data-kh="ពិធីកាត់សក់បង្កកសេរី">ពិធីកាត់សក់បង្កកសេរី</span></li>
-                        <li><span class="time">10:30 AM</span> <span class="event" data-en="Pairing Ceremony" data-kh="ពិធីសំពាះផ្ទឹម">ពិធីសំពាះផ្ទឹម</span></li>
-                        <li><span class="time">11:00 AM</span> <span class="event" data-en="Lunch Reception" data-kh="អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់">អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់</span></li>
-                    </ul>
-                </div>
-                <div class="program-section">
-                    <h4 class="time-of-day" data-en="Evening Program" data-kh="កម្មវិធីពេលល្ងាច">កម្មវិធីពេលល្ងាច</h4>
-                    <ul class="program-list">
-                        <li><span class="time">5:00 PM</span> <span class="event" data-en="Dinner Reception" data-kh="ទទួលបដិសណ្ធារកិច្ចភ្ញៀវកិត្តិយសពិសារអាហារពេលល្ងាច">ទទួលបដិសណ្ធារកិច្ចភ្ញៀវកិត្តិយសពិសារអាហារពេលល្ងាច</span></li>
-                    </ul>
-                    <p class="program-location">📍 City Hall អគារB</p>
-                </div>
-            </div>
         </div>
 
         <div class="container animate-on-scroll" id="stats-section">
@@ -221,40 +195,29 @@
             </div>
         </div>
 
-
         <div class="glass-card animate-on-scroll tilt-effect">
             <h2 class="card-title" data-en="Our Story" data-kh="ដំណើររឿង">Our Story</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="date">2013</div>
-                    <div class="desc" data-en="First Met" data-kh="ជួបគ្នាលើកដំបូង">First Met</div>
+            <div class="story-layout">
+                <img src="image/pic1.jpg" class="story-img gallery-img" alt="Wedding Pic 1">
+                <div class="timeline" style="flex-grow: 1;">
+                    <div class="timeline-item">
+                        <div class="date">2013</div>
+                        <div class="desc" data-en="First Met" data-kh="ជួបគ្នាលើកដំបូង">First Met</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">2025</div>
+                        <div class="desc" data-en="Engaged" data-kh="ភ្ជាប់ពាក្យ">Engaged</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="date">2026</div>
+                        <div class="desc" data-en="Wedding Day" data-kh="ថ្ងៃមង្គលការ">Wedding Day</div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="date">2025</div>
-                    <div class="desc" data-en="Engaged" data-kh="ភ្ជាប់ពាក្យ">Engaged</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="date">2026</div>
-                    <div class="desc" data-en="Wedding Day" data-kh="ថ្ងៃមង្គលការ">Wedding Day</div>
-                </div>
+                <img src="image/pic2.jpg" class="story-img gallery-img" alt="Wedding Pic 2">
             </div>
         </div>
 
         <div class="container">
-            <div class="glass-card animate-on-scroll tilt-effect">
-                <h2 class="card-title" data-en="Gallery" data-kh="រូបថត">Gallery</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item"><img src="image/pic1.jpg" class="gallery-img" alt="Wedding gallery photo 1"></div>
-                    <div class="gallery-item"><img src="image/pic2.jpg" class="gallery-img" alt="Wedding gallery photo 2"></div>
-                    <div class="gallery-item"><img src="image/pic3.jpg" class="gallery-img" alt="Wedding gallery photo 3"></div>
-                    <div class="gallery-item"><img src="image/pic4.jpg" class="gallery-img" alt="Wedding gallery photo 4"></div>
-                    <div class="gallery-item"><img src="image/pic5.jpg" class="gallery-img" alt="Wedding gallery photo 5"></div>
-                    <div class="gallery-item"><img src="image/pic6.jpg" class="gallery-img" alt="Wedding gallery photo 6"></div>
-                    <div class="gallery-item"><img src="image/pic7.jpg" class="gallery-img" alt="Wedding gallery photo 7"></div>
-                    <div class="gallery-item"><img src="image/pic8.jpg" class="gallery-img" alt="Wedding gallery photo 8"></div>
-                </div>
-            </div>
-
             <div class="glass-card animate-on-scroll tilt-effect">
                 <h2 class="card-title" data-en="Wedding Gift" data-kh="ចំណងដៃ">Wedding Gift</h2>
                 <div class="qr-wrapper">
@@ -266,6 +229,10 @@
                         <span class="acc-num" id="aba-number">015539438</span>
                     </div>
                     <button id="copy-btn" class="icon-btn">📋</button>
+                </div>
+                <div class="gift-pics-container">
+                    <img src="image/pic3.jpg" class="gift-sub-img gallery-img" alt="Wedding Pic 3">
+                    <img src="image/pic4.jpg" class="gift-sub-img gallery-img" alt="Wedding Pic 4">
                 </div>
             </div>
         </div>
@@ -291,7 +258,7 @@
 
                 <div class="input-group">
                     <select id="rsvp-guests" required>
-                        <option value="" disabled selected data-en="Number of Guests" data-kh="ចំនួនភ្ញៀវសរុប">Number of Guests / ចំនួនភ្ញៀវ</option>
+                        <option value="" disabled selected data-en="Number of Guests" data-kh="ចំនូនភ្ញៀវសរុប">Number of Guests / ចំនួនភ្ញៀវ</option>
                         <option value="1">1 Person / ១ នាក់</option>
                         <option value="2">2 People / ២ នាក់</option>
                         <option value="3">3 People / ៣ នាក់</option>
