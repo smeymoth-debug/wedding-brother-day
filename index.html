@@ -27,11 +27,27 @@
 
         .spacer-20 { height: 20px; }
         
-        /* New helper styles for requested image layout */
-        .story-layout { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-        .story-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid #bf953f; flex-shrink: 0; }
+        /* UPDATED STORY LAYOUT: Square 140px */
+        .story-layout { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 20px 0; }
+        .story-img { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 12px; 
+            object-fit: cover; 
+            border: 3px solid #bf953f; 
+            flex-shrink: 0; 
+            box-shadow: 0 0 20px rgba(191, 149, 63, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .story-img:hover { transform: scale(1.05); }
+
         .gift-pics-container { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
         .gift-sub-img { width: 45%; border-radius: 8px; aspect-ratio: 1/1; object-fit: cover; border: 1px solid rgba(191, 149, 63, 0.3); }
+
+        @media (max-width: 480px) {
+            .story-img { width: 100px; height: 100px; }
+            .story-layout { gap: 8px; }
+        }
     </style>
 </head>
 <body>
@@ -60,20 +76,18 @@
                 <div class="khmer-border left-border"></div>
                 
                 <div class="opening-content">
-                    <div class="couple-initials">
+                    <div class="khmer-title">
                         <span class="initial">V</span>
                         <span class="heart"><i class="fas fa-heart"></i></span>
                         <span class="initial">R</span>
                     </div>
                     
                     <h1 class="khmer-title">
-                        <span class="title-text">អាពាហ៍ពិពាហ៍</span>
+                        <span class="title-text gold-gradient">អាពាហ៍ពិពាហ៍</span>
                         <span class="title-text gold-gradient">គូរភរិយាថ្មី</span>
                     </h1>
                     
-                    <p class="khmer-subtitle">
-                        សូមគោរពអញ្ជើញភ្ញៀវកេត្តិយស<br>
-                    </p>
+                    <p class="khmer-subtitle">សូមគោរពអញ្ជើញភ្ញៀវកិត្តិយស</p>
                     
                     <div class="decorative-divider">
                         <div class="divider-line"></div>
@@ -108,31 +122,28 @@
         <div id="firefly-container"></div>
 
         <div class="floating-menu">
-            <button id="lang-btn" class="float-btn" title="Switch Language">🇰🇭</button>
-            <button id="music-btn" class="float-btn music-btn playing" title="Toggle Music">
+            <button id="lang-btn" class="float-btn">🇰🇭</button>
+            <button id="music-btn" class="float-btn music-btn playing">
                 <i class="fas fa-music"></i>
             </button>
         </div>
 
         <div id="lightbox" class="lightbox">
             <span class="close-lightbox">×</span>
-            <img class="lightbox-content" id="lightbox-img" alt="Wedding Photo">
+            <img class="lightbox-content" id="lightbox-img">
         </div>
 
         <div class="spacer-20"></div>
 
         <div class="rsvp-badge animate-on-scroll">
-            <span data-en="RSVP by Feb 22, 2026" data-kh="ថ្ងៃទី ២២ កុម្ភៈ ២០២៦">RSVP by Feb 22, 2026</span>
+            <span>RSVP by Feb 22, 2026</span>
         </div>
 
         <div class="glass-card main-card animate-on-scroll tilt-effect">
             <div class="ornament">❦</div>
-            
-            <h1 class="title" data-en="We cordially invite" data-kh="មានកិត្តិយសសូមគោរពអញ្ជើញ">មានកិត្តិយសសូមគោរពអញ្ជើញ</h1>
-            <p class="subtitle" style="line-height: 1.8;" data-en="Excellencies, Ladies, Gentlemen and Friends, to join and bless the wedding of our children" data-kh="ឯកឧត្តម លោកឧកញ្ញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា នឹង ប្រិយមិត្តអញ្ញើញ ចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពេជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ">
-                យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ
-ឯកឧត្តម លោកឧកញ្ញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា នឹង ប្រិយមិត្តទាំងអស់អញ្ជើញ ចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ 
-កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ<br>
+            <h1 class="title">យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ</h1>
+            <p class="subtitle" style="line-height: 1.8;">
+                ឯកឧត្តម លោកឧកញ្ញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា នឹង ប្រិយមិត្តទាំងអស់អញ្ជើញ ចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ
             </p>
             <div class="gold-divider"></div>
 
@@ -151,14 +162,9 @@
                 <div class="time-unit"><span id="minutes">00</span><label>Mins</label></div>
             </div>
 
-            <span data-en="countdown event" data-kh="ប្រតិទិន"></span>
-
-            <div class="gold-divider"></div>
-
             <div class="details-grid">
                 <div class="detail-item">
-                    <div class="icon"></div>
-                    <h3 data-en="Sunday" data-kh="ថ្ងៃអាទិត្យ">Sunday</h3>
+                    <h3>Sunday</h3>
                     <p>February 22, 2026</p>
                     <p class="small-text">5:00 PM</p>
                 </div>
@@ -172,51 +178,34 @@
             <div class="map-wrapper fade-in-delay">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.97230230537!2d103.18974551351112!3d13.06787355152341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3105490013f96615%3A0x6b4fb6c1f1f919f6!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <a href="https://maps.app.goo.gl/wXZAZfgZKZ9mdEAC8" target="_blank" rel="noopener" class="text-link" data-en="Open in Google Maps" data-kh="បើកក្នុងកម្មវិធីផែនទី">Open in Google Maps →</a>
+            <a href="https://maps.app.goo.gl/wXZAZfgZKZ9mdEAC8" target="_blank" class="text-link">Open in Google Maps →</a>
         </div>
 
         <div class="container animate-on-scroll" id="stats-section">
             <div class="glass-card stats-card">
-                <div class="stat-box">
-                    <span class="stat-number" data-target="2190">0</span>
-                    <span class="stat-label">Days Known</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-label">% Love</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number" data-target="1">0</span>
-                    <span class="stat-label">Big Day</span>
-                </div>
+                <div class="stat-box"><span class="stat-number" data-target="2190">0</span><span class="stat-label">Days Known</span></div>
+                <div class="stat-box"><span class="stat-number" data-target="100">0</span><span class="stat-label">% Love</span></div>
+                <div class="stat-box"><span class="stat-number" data-target="1">0</span><span class="stat-label">Big Day</span></div>
             </div>
         </div>
 
         <div class="glass-card animate-on-scroll tilt-effect">
-            <h2 class="card-title" data-en="Our Story" data-kh="ដំណើររឿង">Our Story</h2>
+            <h2 class="card-title">Our Story / ដំណើររឿង</h2>
+            <h3 class="subtitle">វីន​🩷រត្ឋ</h3>
             <div class="story-layout">
-                <img src="image/pic7.jpg" class="story-img gallery-img" alt="Wedding Pic 1">
+                <img src="image/pic7.jpg" class="story-img gallery-img" alt="Pic 7">
                 <div class="timeline" style="flex-grow: 1;">
-                    <div class="timeline-item">
-                        <div class="date">2013</div>
-                        <div class="desc" data-en="First Met" data-kh="ជួបគ្នាលើកដំបូង">First Met</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="date">2025</div>
-                        <div class="desc" data-en="Engaged" data-kh="ភ្ជាប់ពាក្យ">Engaged</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="date">2026</div>
-                        <div class="desc" data-en="Wedding Day" data-kh="ថ្ងៃមង្គលការ">Wedding Day</div>
-                    </div>
+                    <div class="timeline-item"><div class="date">2013</div><div class="desc">First Met</div></div>
+                    <div class="timeline-item"><div class="date">2025</div><div class="desc">Engaged</div></div>
+                    <div class="timeline-item"><div class="date">2026</div><div class="desc">Wedding Day</div></div>
                 </div>
-                <img src="image/pic5.jpg" class="story-img gallery-img" alt="Wedding Pic 2">
+                <img src="image/pic5.jpg" class="story-img gallery-img" alt="Pic 5">
             </div>
         </div>
 
         <div class="container">
             <div class="glass-card animate-on-scroll tilt-effect">
-                <h2 class="card-title" data-en="Wedding Gift" data-kh="ចំណងដៃ">Wedding Gift</h2>
+                <h2 class="card-title">Wedding Gift / ចំណងដៃ</h2>
                 <div class="qr-wrapper">
                     <img src="image/3d4690a7-a225-463a-9ee1-f2ec1cc029f6.jpg" alt="ABA QR" class="qr-img gallery-img">
                 </div>
@@ -228,47 +217,26 @@
                     <button id="copy-btn" class="icon-btn">📋</button>
                 </div>
                 <div class="gift-pics-container">
-                    <img src="image/pic1.jpg" class="gift-sub-img gallery-img" alt="Wedding Pic 3">
-                    <img src="image/pic4.jpg" class="gift-sub-img gallery-img" alt="Wedding Pic 4">
+                    <img src="image/pic1.jpg" class="gift-sub-img gallery-img" alt="Pic 1">
+                    <img src="image/pic4.jpg" class="gift-sub-img gallery-img" alt="Pic 4">
                 </div>
             </div>
         </div>
 
         <div class="glass-card animate-on-scroll full-width tilt-effect">
-            <h2 class="card-title" data-en="RSVP" data-kh="បញ្ជាក់ការចូលរួម">RSVP</h2>
-            <p class="subtitle" data-en="Please respond by Feb 15, 2026" data-kh="សូមបញ្ជាក់មុនថ្ងៃទី ១៥ កុម្ភៈ ២០២៦">Please respond by Feb 15, 2026</p>
-            
+            <h2 class="card-title">RSVP / បញ្ជាក់ការចូលរួម</h2>
+            <p class="subtitle">Please respond by Feb 15, 2026</p>
             <form id="rsvp-form">
-                <div class="input-group">
-                    <input type="text" id="rsvp-name" placeholder="Name / ឈ្មោះ" required>
-                </div>
-
+                <div class="input-group"><input type="text" id="rsvp-name" placeholder="Name / ឈ្មោះ" required></div>
                 <div class="input-group">
                     <select id="rsvp-attendance" required>
-                        <option value="" disabled selected data-en="Will you attend?" data-kh="តើលោកអ្នកនឹងអញ្ជើញចូលរួមដែរឬទេ?">Will you attend? / តើអ្នកនឹងចូលរួមទេ?</option>
-                        <option value="Both">Yes, Morning & Evening / បាទ/ចាស ទាំងព្រឹកនិងល្ងាច</option>
-                        <option value="Morning">Morning Only / ពេលព្រឹកប៉ុណ្ណោះ</option>
-                        <option value="Evening">Evening Only / ពេលល្ងាចប៉ុណ្ណោះ</option>
-                        <option value="No">Regretfully Cannot Attend / មិនអាចចូលរួមបានទេ</option>
+                        <option value="" disabled selected>Will you attend?</option>
+                        <option value="Both">Yes, Morning & Evening</option>
+                        <option value="No">Regretfully Cannot Attend</option>
                     </select>
                 </div>
-
-                <div class="input-group">
-                    <select id="rsvp-guests" required>
-                        <option value="" disabled selected data-en="Number of Guests" data-kh="ចំនូនភ្ញៀវសរុប">Number of Guests / ចំនួនភ្ញៀវ</option>
-                        <option value="1">1 Person / ១ នាក់</option>
-                        <option value="2">2 People / ២ នាក់</option>
-                        <option value="3">3 People / ៣ នាក់</option>
-                        <option value="4+">4+ People / ៤ នាក់ឡើង</option>
-                        <option value="0">0 (Not attending)</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <textarea id="rsvp-message" placeholder="Wishes for the couple / ពាក្យជូនពរ..." required></textarea>
-                </div>
-
-                <button type="submit" class="gold-btn" data-en="Send RSVP ✨" data-kh="បញ្ជាក់ការចូលរួម ✨">Send RSVP ✨</button>
+                <div class="input-group"><textarea id="rsvp-message" placeholder="Wishes..."></textarea></div>
+                <button type="submit" class="gold-btn">Send RSVP ✨</button>
             </form>
             <div id="messages-display" style="margin-top: 20px;"></div>
         </div>
@@ -277,8 +245,6 @@
             <p class="credits">Created by Mot Reaksmey and Leang hong</p>
         </footer>
     </div>
-
-    <div class="cursor-trail"></div>
 
     <script src="card.js"></script>
 </body>
