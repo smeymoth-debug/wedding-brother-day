@@ -27,7 +27,6 @@
 
         .spacer-20 { height: 20px; }
         
-        /* UPDATED STORY LAYOUT: Square 140px */
         .story-layout { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 20px 0; }
         .story-img { 
             width: 140px; 
@@ -43,6 +42,10 @@
 
         .gift-pics-container { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
         .gift-sub-img { width: 45%; border-radius: 8px; aspect-ratio: 1/1; object-fit: cover; border: 1px solid rgba(191, 149, 63, 0.3); }
+
+        /* Map styling */
+        .map-section { margin-top: 25px; }
+        .map-wrapper { border-radius: 12px; overflow: hidden; border: 1px solid #bf953f; margin-bottom: 8px; }
 
         @media (max-width: 480px) {
             .story-img { width: 100px; height: 100px; }
@@ -149,9 +152,9 @@
 
             <div class="couple-section">
                 <div class="couple-name">
-                    <span id="typewriter-text"></span><span class="cursor">|</span>
+                    <span style="font-family: 'Moul', serif; font-size: 1.4rem;">ម៉ូត ណាវីន ❤️ ជុំ សេរីរត្ន័</span>
                 </div>
-                <span class="english-name fade-in-delay">Navin & Sreyroat</span>
+                <span class="english-name fade-in-delay">Navin & Sreyroath</span>
             </div>
 
             <div class="countdown-wrapper fade-in-delay">
@@ -162,23 +165,49 @@
                 <div class="time-unit"><span id="minutes">00</span><label>Mins</label></div>
             </div>
 
-            <div class="details-grid">
-                <div class="detail-item">
-                    <h3>Sunday</h3>
-                    <p>February 22, 2026</p>
-                    <p class="small-text">5:00 PM</p>
+            <div class="map-section">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h3 style="color: #bf953f;">ថ្ងៃទី១និងទី២</h3>
+                        <p>Sunday, Feb 21&22, 2026</p>
+                        <p class="small-text">7:00 AM</p>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">🏠</div>
+                        <h3>Residence</h3>
+                        <p>គេហដ្ឋានខាងស្រី</p>
+                    </div>
                 </div>
-                <div class="detail-item">
-                    <div class="icon">📍</div>
-                    <h3>City Hall (B)</h3>
-                    <p>(បាត់ដំបង ស៊ីធីហល អគារប៊ី)</p>
+                <div class="map-wrapper fade-in-delay">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.634628283733!2d103.1932375!3d13.0906233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31054999df5975d7%3A0xc608d488029c7b95!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
+                <a href="hhttps://maps.app.goo.gl/2BArKE5rp5xXrP1A6" target="_blank" class="text-link"> Map House→</a>
             </div>
 
-            <div class="map-wrapper fade-in-delay">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.97230230537!2d103.18974551351112!3d13.06787355152341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3105490013f96615%3A0x6b4fb6c1f1f919f6!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="decorative-divider" style="margin: 20px 0;">
+                <div class="divider-line"></div>
+                <div class="divider-ornament">💍</div>
+                <div class="divider-line"></div>
             </div>
-            <a href="https://maps.app.goo.gl/wXZAZfgZKZ9mdEAC8" target="_blank" class="text-link">Open in Google Maps →</a>
+
+            <div class="map-section">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h3 style="color: #bf953f;">ថ្ងៃទី២(ពេលល្ងាច)</h3>
+                        <p>Sunday, Feb 22, 2026</p>
+                        <p class="small-text">5:00 PM</p>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">📍</div>
+                        <h3>City Hall (B)</h3>
+                        <p>បាត់ដំបង ស៊ីធីហល</p>
+                    </div>
+                </div>
+                <div class="map-wrapper fade-in-delay">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.634628283733!2d103.1932375!3d13.0906233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31054999df5975d7%3A0xc608d488029c7b95!2sBattambang%20City%20Hall!5e0!3m2!1sen!2skh!4v1700000000000" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a href="https://maps.app.goo.gl/uX7MvP9B8XyW6P5t8" target="_blank" class="text-link">Open Reception Map →</a>
+            </div>
         </div>
 
         <div class="container animate-on-scroll" id="stats-section">
@@ -191,10 +220,7 @@
 
         <div class="glass-card animate-on-scroll tilt-effect">
             <h2 class="card-title">Our Story / ដំណើររឿង</h2>
-            <h3 class="subtitle khmer-title"></h3>
-            <span class="story-intro">
-                វីន​🩷រត្ឋ
-            </span>
+            <span class="story-intro">វីន​🩷រត្ឋ</span>
             <div class="story-layout">
                 <img src="image/pic7.jpg" class="story-img gallery-img" alt="Pic 7">
                 <div class="timeline" style="flex-grow: 1;">
